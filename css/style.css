@@ -37,6 +37,7 @@ div#explorer-chats div#user-bar{
     border: 1px solid red;
 }
 
+/* notification-config */
 div#explorer-chats div#notifications-config{
     height: 100px;
     background-color: #182229;
@@ -44,11 +45,50 @@ div#explorer-chats div#notifications-config{
     border: 1px solid red;
 }
 
+div#notifications-config span.icon-circle{
+    width: 50px;
+    height: 50px;
+    background-color: #53BDEA;
+}
+
+div#notifications-config div#notifications-config-link h6{
+    font-size: .85rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+div#notifications-config div#notifications-config-link p{
+    font-size: .75rem;
+    display: inline;
+    color: #8696A0;
+}
+
+div#notifications-config div#notifications-config-link p:hover{
+    text-decoration: underline;
+}
+
+div#notifications-config div#notifications-config-link i{
+    vertical-align: center;
+    font-size: .6rem;
+    color: #8696A0;
+}
+
+/* search-bar */
 div#explorer-chats div#search-bar{
     height: 60px;
     background-color: #111B21;
 
     border: 1px solid red;
+}
+
+div#explorer-chats div#search-bar span.my-search-bar{
+    background-color: #1F2C33;
+    border-radius: 10px;
+}
+
+div#explorer-chats div#search-bar span.my-search-bar input{
+    border: none;
+    background-color: #1F2C33;;
 }
 
 div#explorer-chats div#messages{
