@@ -9,3 +9,29 @@ main {
     overflow: hidden;
     min-width: 520px;
 }
+
+/* EXPLORER CHATS */
+
+div#explorer-chats div#user-bar{
+    height: 80px;
+
+    border: 1px solid red;
+}
+
+div#explorer-chats div#notifications-config{
+    height: 100px;
+
+    border: 1px solid red;
+}
+
+div#explorer-chats div#search-bar{
+    height: 50px;
+
+    border: 1px solid red;
+}
+
+div#explorer-chats div#messages{
+    height: calc(100vh - 270px);
+
+    border: 1px solid red;
+}
