@@ -91,6 +91,7 @@ div#explorer-chats div#search-bar span.my-search-bar input{
     background-color: #1F2C33;;
 }
 
+/* messages */
 div#explorer-chats div#messages{
     height: calc(100vh - 260px);
     background-color: #111B21;
@@ -99,6 +100,25 @@ div#explorer-chats div#messages{
 
     border: 1px solid red;
 }
+
+div#explorer-chats div#messages div.single-message:hover{
+    cursor: pointer;
+    background-color: #2A3942;
+}
+
+div#explorer-chats div#messages div.single-message div.single-message-content{
+    width: calc(100% - 50px);
+    border-bottom: 1px solid #374044;
+}
+
+div#explorer-chats div#messages div.single-message div.single-message-content i{
+    display: none;
+}
+
+div#explorer-chats div#messages div.single-message:hover div.single-message-content i{
+    display: inline-block;
+}
+
 
 /* CHAT */
 
