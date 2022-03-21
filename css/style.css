@@ -144,6 +144,11 @@ div#chat div#messages-chat{
     background-size: contain;
 }
 
+div#chat div#messages-chat span.user-chat-single-text{
+    background-color: white;
+    
+}
+
 div#chat div#new-message{
     height: 80px;
     background-color: #1F2C33;

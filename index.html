@@ -68,7 +68,7 @@
 
                         <div v-for="contact in contacts" class="single-message d-flex px-3 pt-3" @click="activeChat(contact)">
                             <div class="user-avatar">
-                                <a href=""><img class="rounded-circle " :src="'img/' + contact.avatar" alt="user avatar"></a>
+                                <img class="rounded-circle " :src="'img/' + contact.avatar" alt="user avatar">
                             </div>
                             <div class="single-message-content d-flex ms-3 justify-content-between align-items-start">
                                 <div class="single-message-content-text">
@@ -109,7 +109,15 @@
                         
                     </div>
                     <div id="messages-chat">
-                        messages-chat
+                        <div v-for="element in activeArray" class="user-chat-messages" v-if="element.active">
+                            <div class="user-chat-single-message mt-3 d-flex" v-for="message in element.messages":class="(message.status == 'sent') ? 'justify-content-end pe-3 ':'justify-content-start ps-3'" >
+                                <span class="text-secondary user-chat-single-text rounded-3 p-2" :class="(message.status == 'sent') ? 'bg-success text-white':'bg-white'"  >
+                                    
+                                        {{message.message}}
+                                    
+                                </span>
+                            </div>
+                        </div>
                     </div>
                     <div id="new-message">
                         new-message
