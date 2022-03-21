@@ -66,7 +66,7 @@
                     </div>
                     <div id="messages">
 
-                        <div v-for="contact in contacts" class="single-message d-flex px-3 pt-3">
+                        <div v-for="contact in contacts" class="single-message d-flex px-3 pt-3" @click="activeChat(contact)">
                             <div class="user-avatar">
                                 <a href=""><img class="rounded-circle " :src="'img/' + contact.avatar" alt="user avatar"></a>
                             </div>
@@ -89,8 +89,24 @@
 
                 <div id="chat" class="col-9">
 
-                    <div id="user-chat">
-                        user-chat
+                    <div id="user-chat" class="d-flex justify-content-between align-items-center px-3">
+                       
+                        <div v-for="element in activeArray" class="user-chat-info d-flex align-items-center" v-if="element.active">
+
+                            <div class="user-avatar">
+                                <a href=""><img class="rounded-circle " :src="'img/' + element.avatar" alt="user avatar"></a>
+                            </div>
+                            <div class="user-chat-name ms-3">
+                                <h6 class="text-white mb-0">{{element.name}}</h6>
+                                <p class="text-secondary mb-0">Last message sent</p>
+                            </div>
+                        </div>
+
+                        <div class="user-icons fs-5">
+                            <a href=""><i class="fa-solid fa-magnifying-glass mx-4 text-light"></i></a>
+                            <a href=""><i class="fa-solid fa-ellipsis-vertical me-3 text-light"></i></a>
+                         </div>
+                        
                     </div>
                     <div id="messages-chat">
                         messages-chat

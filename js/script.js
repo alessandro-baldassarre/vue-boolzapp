@@ -5,6 +5,10 @@ const app = new Vue({
 
     
     data: {
+
+        activeArray: [
+
+        ],
         
         contacts: [
             {
@@ -167,13 +171,18 @@ const app = new Vue({
                     }
                 ],
             }
-        ]
+        ],
     },
 
     methods: {
 
-        
-       
+        activeChat: function(activeElement){
+            this.activeArray = [];
+            tempArray = activeElement;
+            tempArray.active = true;
+            this.activeArray.push(tempArray);
+            console.log(this.activeArray);
+            }        
     }
 
   });

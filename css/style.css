@@ -25,7 +25,8 @@ div.user-avatar img{
 
 /* EXPLORER CHATS */
 div#explorer-chats{
-    padding: 10px 0;
+    margin:10px 0;
+    padding: 0;
     overflow: hidden;
 }
 
@@ -33,16 +34,12 @@ div#explorer-chats{
 div#explorer-chats div#user-bar{
     height: 80px;
     background-color: #1F2C33;
-
-    border: 1px solid red;
 }
 
 /* notification-config */
 div#explorer-chats div#notifications-config{
     height: 100px;
     background-color: #182229;
-
-    border: 1px solid red;
 }
 
 div#notifications-config span.icon-circle{
@@ -77,8 +74,6 @@ div#notifications-config div#notifications-config-link i{
 div#explorer-chats div#search-bar{
     height: 60px;
     background-color: #111B21;
-
-    border: 1px solid red;
 }
 
 div#explorer-chats div#search-bar span.my-search-bar{
@@ -95,10 +90,9 @@ div#explorer-chats div#search-bar span.my-search-bar input{
 div#explorer-chats div#messages{
     height: calc(100vh - 260px);
     background-color: #111B21;
+    border-top: 1px solid #2A3942;
     min-height: 80px;
     overflow-y: auto;
-
-    border: 1px solid red;
 }
 
 div#explorer-chats div#messages div.single-message:hover{
@@ -127,15 +121,19 @@ div#explorer-chats div#messages div.single-message:hover div.single-message-cont
 /* CHAT */
 
 div#chat{
-    padding: 10px 0;
+    margin:10px 0;
+    padding: 0;
     overflow: hidden;
+    border-left: 1px solid #2A3942;
 }
 
 div#chat div#user-chat{
     height: 80px;
     background-color: #1F2C33;
+}
 
-    border: 1px solid red;
+div#chat div#user-chat p{
+    font-size: .7rem;
 }
 
 div#chat div#messages-chat{
@@ -144,15 +142,11 @@ div#chat div#messages-chat{
     min-height: 160px;
     background-image: url("../img/wallpaper-black.jpeg");
     background-size: contain;
-
-    border: 1px solid red;
 }
 
 div#chat div#new-message{
     height: 80px;
     background-color: #1F2C33;
-
-    border: 1px solid red;
 }
 
 
