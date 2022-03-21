@@ -1,5 +1,5 @@
 body {
-
+    background-color: rgb(10, 16, 20);
     
 }
 
@@ -20,24 +20,29 @@ div#explorer-chats{
 
 div#explorer-chats div#user-bar{
     height: 80px;
+    background-color: #1F2C33;
 
     border: 1px solid red;
 }
 
 div#explorer-chats div#notifications-config{
     height: 100px;
+    background-color: #182229;
 
     border: 1px solid red;
 }
 
 div#explorer-chats div#search-bar{
     height: 60px;
+    background-color: #111B21;
 
     border: 1px solid red;
 }
 
 div#explorer-chats div#messages{
     height: calc(100vh - 260px);
+    background-color: #111B21;
+
     overflow-y: auto;
 
     border: 1px solid red;
@@ -52,13 +57,21 @@ div#chat{
 
 div#chat div#user-chat{
     height: 80px;
+    background-color: #1F2C33;
 
     border: 1px solid red;
 }
 
 div#chat div#messages-chat{
-    height: calc(100vh - 100px);
+    height: calc(100vh - 180px);
     overflow-y: auto;
+
+    border: 1px solid red;
+}
+
+div#chat div#new-message{
+    height: 80px;
+    background-color: #1F2C33;
 
     border: 1px solid red;
 }
