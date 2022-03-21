@@ -8,9 +8,15 @@ main {
     max-height: 100vh;
     overflow: hidden;
     min-width: 520px;
+    
 }
 
 /* EXPLORER CHATS */
+div#explorer-chats{
+    padding: 10px 0;
+    overflow: hidden;
+
+}
 
 div#explorer-chats div#user-bar{
     height: 80px;
@@ -25,13 +31,37 @@ div#explorer-chats div#notifications-config{
 }
 
 div#explorer-chats div#search-bar{
-    height: 50px;
+    height: 60px;
 
     border: 1px solid red;
 }
 
 div#explorer-chats div#messages{
-    height: calc(100vh - 270px);
+    height: calc(100vh - 260px);
+    overflow-y: auto;
 
     border: 1px solid red;
 }
+
+/* CHAT */
+
+div#chat{
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+div#chat div#user-chat{
+    height: 80px;
+
+    border: 1px solid red;
+}
+
+div#chat div#messages-chat{
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+
+    border: 1px solid red;
+}
+
+
+
