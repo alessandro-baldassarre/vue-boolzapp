@@ -111,6 +111,10 @@ div#explorer-chats div#messages div.single-message div.single-message-content{
     border-bottom: 1px solid #374044;
 }
 
+div#explorer-chats div#messages div.single-message div.single-message-content p{
+    font-size: .7rem;
+}
+
 div#explorer-chats div#messages div.single-message div.single-message-content i{
     display: none;
 }
