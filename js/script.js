@@ -193,13 +193,22 @@ const app = new Vue({
             this.contactsCopy = this.contacts;
         },
 
-        addNewMessage(text){
+        addNewMessage: function(text){
             tempObj = {}
             tempObj.date = '10/01/2020 15:51:00';
             tempObj.message  = text;
             tempObj.status = 'sent';
             this.contactsCopy[this.currentChat.index].messages.push(tempObj);
             this.newMessage = "";
+            setTimeout(this.responseMessage, 1000);
+        },
+
+        responseMessage: function(){
+            messageResponse = {}
+            messageResponse.date = '10/01/2020 15:51:00';
+            messageResponse.message  = 'ok';
+            messageResponse.status = 'received';
+            this.contactsCopy[this.currentChat.index].messages.push(messageResponse);
         }
     },
 
