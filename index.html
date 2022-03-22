@@ -66,7 +66,7 @@
                     </div>
                     <div id="messages">
 
-                        <div v-for="contact in contacts" class="single-message d-flex px-3 pt-3" @click="activeChat(contact)">
+                        <div v-for="(contact, index) in contactsCopy" class="single-message d-flex px-3 pt-3" @click="activeChat(contact, index)" :class="(contact == currentChat) ? 'active' : ''">
                             <div class="user-avatar">
                                 <img class="rounded-circle " :src="'img/' + contact.avatar" alt="user avatar">
                             </div>
@@ -89,17 +89,18 @@
 
                 <div id="chat" class="col-9">
 
-                    <div id="user-chat" class="d-flex justify-content-between align-items-center px-3">
+                    <div id="user-chat" class="d-flex align-items-center px-3" :class="(Object.keys(currentChat).length === 0) ? 'justify-content-end' : 'justify-content-between'">
                        
-                        <div v-for="element in activeArray" class="user-chat-info d-flex align-items-center" v-if="element.active">
-
+                        <div v-if="(Object.keys(currentChat).length !== 0)" class="user-chat-info d-flex align-items-center">
+                            
                             <div class="user-avatar">
-                                <a href=""><img class="rounded-circle " :src="'img/' + element.avatar" alt="user avatar"></a>
+                                <img class="rounded-circle " :src="'img/' + currentChat.avatar" alt="user avatar">
                             </div>
                             <div class="user-chat-name ms-3">
-                                <h6 class="text-white mb-0">{{element.name}}</h6>
+                                <h6 class="text-white mb-0">{{currentChat.name}}</h6>
                                 <p class="text-secondary mb-0">Last message sent</p>
                             </div>
+
                         </div>
 
                         <div class="user-icons fs-5">
@@ -109,11 +110,11 @@
                         
                     </div>
                     <div id="messages-chat">
-                        <div v-for="element in activeArray" class="user-chat-messages" v-if="element.active">
-                            <div class="user-chat-single-message mt-3 d-flex" v-for="message in element.messages":class="(message.status == 'sent') ? 'justify-content-end pe-3 ':'justify-content-start ps-3'" >
-                                <span class="text-secondary user-chat-single-text rounded-3 p-2" :class="(message.status == 'sent') ? 'bg-success text-white':'bg-white'"  >
+                        <div class="user-chat-messages">
+                            <div class="user-chat-single-message mt-3 d-flex" v-for="messages in currentChat.messages":class="(messages.status == 'sent') ? 'justify-content-end pe-3 ':'justify-content-start ps-3'" >
+                                <span class="text-secondary user-chat-single-text rounded-3 p-2" :class="(messages.status == 'sent') ? 'bg-success text-white':'bg-white'"  >
                                     
-                                        {{message.message}}
+                                        {{messages.message}}
                                     
                                 </span>
                             </div>

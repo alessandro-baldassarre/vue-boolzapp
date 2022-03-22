@@ -100,6 +100,14 @@ div#explorer-chats div#messages div.single-message:hover{
     background-color: #2A3942;
 }
 
+div#explorer-chats div#messages div.single-message.active{
+    background-color: #2A3942;
+}
+
+div#explorer-chats div#messages div.single-message.active div.single-message-content i{
+    display: inline-block;
+}
+
 div#explorer-chats div#messages div.single-message div.single-message-content{
     width: calc(100% - 50px);
     border-bottom: 1px solid #374044;

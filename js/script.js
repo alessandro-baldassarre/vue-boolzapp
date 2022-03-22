@@ -6,31 +6,14 @@ const app = new Vue({
     
     data: {
 
-        activeArray: [ {
-            name: 'Michele',
-            avatar: '_1',
-            visible: true,
-            active: true,
-            messages: [
-                {
-                    date: '10/01/2020 15:30:55',
-                    message: 'Hai portato a spasso il cane?',
-                    status: 'sent'
-                },
-                {
-                    date: '10/01/2020 15:50:00',
-                    message: 'Ricordati di stendere i panni',
-                    status: 'sent'
-                },
-                {
-                    date: '10/01/2020 16:15:22',
-                    message: 'Tutto fatto!',
-                    status: 'received'
-                }
-            ],
+        currentChat: {
+            
         },
 
+        contactsCopy: [
+
         ],
+
         
         contacts: [
             {
@@ -198,13 +181,20 @@ const app = new Vue({
 
     methods: {
 
-        activeChat: function(activeElement){
-            this.activeArray = [];
-            tempArray = activeElement;
-            tempArray.active = true;
-            this.activeArray.push(tempArray);
-            console.log(this.activeArray);
-            }        
-    }
+        activeChat: function(activeElement, index){
+            this.currentChat = {};
+            this.currentChat = activeElement;
+            this.currentChat.index = index;
+            console.log(this.currentChat);
+            },
+        
+        copyContacts: function(){
+            this.contactsCopy = this.contacts;
+        }
+    },
+
+    beforeMount(){
+        this.copyContacts()
+     },
 
   });
