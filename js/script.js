@@ -217,7 +217,16 @@ const app = new Vue({
         },
 
         clickMessage: function(index){
-            this.currentChat.messages[index].clickedMessage = !this.currentChat.messages[index].clickedMessage;
+            if(!this.currentChat.messages[index].clickedMessage){
+
+                this.currentChat.messages.filter(element =>{
+                    return element.clickedMessage = false;});
+                this.currentChat.messages[index].clickedMessage = !this.currentChat.messages[index].clickedMessage;
+            }
+            else{
+                this.currentChat.messages[index].clickedMessage = !this.currentChat.messages[index].clickedMessage;
+            }
+            
             console.log(this.currentChat.messages[index].clickedMessage);
             this.$forceUpdate();
         }
