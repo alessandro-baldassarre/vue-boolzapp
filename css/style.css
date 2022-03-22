@@ -17,7 +17,13 @@ div.user-avatar{
     height: 50px;
 }
 
-div.user-avatar img{
+div.contact-avatar{
+    width: 35px;
+    height: 35px;
+}
+
+div.user-avatar img,
+div.contact-avatar img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -38,7 +44,7 @@ div#explorer-chats div#user-bar{
 
 /* notification-config */
 div#explorer-chats div#notifications-config{
-    height: 100px;
+    height: 85px;
     background-color: #182229;
 }
 
@@ -88,9 +94,13 @@ div#explorer-chats div#search-bar span.my-search-bar input{
     width: 100%;
 }
 
+div#explorer-chats div#search-bar span.my-search-bar input:focus{
+    color: white;
+}
+
 /* messages */
 div#explorer-chats div#messages{
-    height: calc(100vh - 260px);
+    height: calc(100vh - 245px);
     background-color: #111B21;
     border-top: 1px solid #2A3942;
     min-height: 80px;
@@ -115,8 +125,12 @@ div#explorer-chats div#messages div.single-message div.single-message-content{
     border-bottom: 1px solid #374044;
 }
 
+div#explorer-chats div#messages div.single-message div.single-message-content h6{
+    font-size: .8rem;
+}
+
 div#explorer-chats div#messages div.single-message div.single-message-content p{
-    font-size: .7rem;
+    font-size: .6rem;
 }
 
 div#explorer-chats div#messages div.single-message div.single-message-content i{
@@ -147,7 +161,7 @@ div#chat div#user-chat p{
 }
 
 div#chat div#messages-chat{
-    height: calc(100vh - 180px);
+    height: calc(100vh - 160px);
     overflow-y: auto;
     min-height: 160px;
     background-image: url("../img/wallpaper-black.jpeg");
@@ -165,8 +179,30 @@ div#chat div#messages-chat div.user-chat-single-text span{
 }
 
 div#chat div#new-message{
-    height: 80px;
+    height: 60px;
     background-color: #1F2C33;
+}
+
+div#chat div#new-message div.icon-left{
+    width: 10%;
+}
+
+div#chat div#new-message div.new-message-input{
+    width: 80%;
+}
+
+div#chat div#new-message div.new-message-input input{
+    border: none;
+    background-color: #2A3942;
+    width: 100%;
+}
+
+div#chat div#new-message div.new-message-input input:focus{
+    color: white;
+}
+
+div#chat div#new-message div.icon-right{
+    width: 10%;
 }
 
 
