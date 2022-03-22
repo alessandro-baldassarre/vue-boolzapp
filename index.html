@@ -112,7 +112,7 @@
                     <div id="messages-chat" class="px-5 pt-4">
                         <div class="user-chat-messages">
                             <div class="user-chat-single-message mt-3 d-flex" v-for="messages in currentChat.messages":class="(messages.status == 'sent') ? 'justify-content-end pe-3 ':'justify-content-start ps-3'" >
-                                <div class="text-secondary user-chat-single-text d-flex align-items-center" :class="(messages.status == 'sent') ? 'bg-success text-white':'bg-white'"  >
+                                <div class="text-secondary user-chat-single-text d-flex align-items-center" :class="(messages.status == 'sent') ? 'bg-success text-white':'my-bg-dark text-light'"  >
                                     
                                        <p class="me-5 m-0 ms-3"> {{messages.message}} </p>
                                        <span class="ms-5 mt-4 me-2 mb-1">21.55</span>

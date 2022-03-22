@@ -29,6 +29,10 @@ div.contact-avatar img{
     object-fit: cover;
 }
 
+.my-bg-dark{
+    background-color: #2A3942;
+}
+
 /* EXPLORER CHATS */
 div#explorer-chats{
     margin:10px 0;
@@ -169,7 +173,6 @@ div#chat div#messages-chat{
 }
 
 div#chat div#messages-chat div.user-chat-single-text{
-    background-color: white;
     font-size: .7rem; 
     border-radius: 10px;  
 }
