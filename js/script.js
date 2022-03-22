@@ -17,7 +17,6 @@ const app = new Vue({
         newMessage: "",
 
         searchContact: "",
-
         
         contacts: [
             {
@@ -189,6 +188,8 @@ const app = new Vue({
             this.currentChat = {};
             this.currentChat = activeElement;
             this.currentChat.index = index;
+            this.currentChat.messages.filter(element =>{
+                return element.clickedMessage = false;});
         },
         
         copyContacts: function(){
@@ -200,6 +201,7 @@ const app = new Vue({
             tempObj.date = '10/01/2020 15:51:00';
             tempObj.message  = text;
             tempObj.status = 'sent';
+            tempObj.clickedMessage = false;
             this.contactsCopy[this.currentChat.index].messages.push(tempObj);
             this.newMessage = "";
             setTimeout(this.responseMessage, 1000);
@@ -210,8 +212,16 @@ const app = new Vue({
             messageResponse.date = '10/01/2020 15:51:00';
             messageResponse.message  = 'ok';
             messageResponse.status = 'received';
+            messageResponse.clickedMessage = false;
             this.contactsCopy[this.currentChat.index].messages.push(messageResponse);
+        },
+
+        clickMessage: function(index){
+            this.currentChat.messages[index].clickedMessage = !this.currentChat.messages[index].clickedMessage;
+            console.log(this.currentChat.messages[index].clickedMessage);
+            this.$forceUpdate();
         }
+
     },
 
     beforeMount(){

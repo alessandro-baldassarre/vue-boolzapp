@@ -182,6 +182,13 @@ div#chat div#messages-chat div.user-chat-single-text span{
     font-size: .5rem;
 }
 
+div#chat div#messages-chat div#message-options{
+    top: 20px;
+    right: -8px;
+    width: 100px;
+    height: 70px;
+}
+
 div#chat div#new-message{
     height: 60px;
     background-color: #1F2C33;
