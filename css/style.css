@@ -79,11 +79,13 @@ div#explorer-chats div#search-bar{
 div#explorer-chats div#search-bar span.my-search-bar{
     background-color: #1F2C33;
     border-radius: 10px;
+    width: 100%;
 }
 
 div#explorer-chats div#search-bar span.my-search-bar input{
     border: none;
-    background-color: #1F2C33;;
+    background-color: #1F2C33;
+    width: 100%;
 }
 
 /* messages */
@@ -152,9 +154,14 @@ div#chat div#messages-chat{
     background-size: contain;
 }
 
-div#chat div#messages-chat span.user-chat-single-text{
+div#chat div#messages-chat div.user-chat-single-text{
     background-color: white;
-    
+    font-size: .7rem; 
+    border-radius: 10px;  
+}
+
+div#chat div#messages-chat div.user-chat-single-text span{
+    font-size: .5rem;
 }
 
 div#chat div#new-message{

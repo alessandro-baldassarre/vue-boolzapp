@@ -27,12 +27,12 @@
 
 <body>
 
-    <main id="app">
+    <main id="app" class="px-5">
 
         <div class="container-fluid px-5">
 
             <div class="row px-5">
-                <div id="explorer-chats" class="col-3">
+                <div id="explorer-chats" class="col-4">
 
                     <div id="user-bar" class="d-flex justify-content-between align-items-center px-3">
 
@@ -87,7 +87,7 @@
 
                 </div>
 
-                <div id="chat" class="col-9">
+                <div id="chat" class="col-8">
 
                     <div id="user-chat" class="d-flex align-items-center px-3" :class="(Object.keys(currentChat).length === 0) ? 'justify-content-end' : 'justify-content-between'">
                        
@@ -109,14 +109,15 @@
                          </div>
                         
                     </div>
-                    <div id="messages-chat">
+                    <div id="messages-chat" class="px-5 pt-4">
                         <div class="user-chat-messages">
                             <div class="user-chat-single-message mt-3 d-flex" v-for="messages in currentChat.messages":class="(messages.status == 'sent') ? 'justify-content-end pe-3 ':'justify-content-start ps-3'" >
-                                <span class="text-secondary user-chat-single-text rounded-3 p-2" :class="(messages.status == 'sent') ? 'bg-success text-white':'bg-white'"  >
+                                <div class="text-secondary user-chat-single-text d-flex align-items-center" :class="(messages.status == 'sent') ? 'bg-success text-white':'bg-white'"  >
                                     
-                                        {{messages.message}}
+                                       <p class="me-5 m-0 ms-3"> {{messages.message}} </p>
+                                       <span class="ms-5 mt-4 me-2 mb-1">21.55</span>
                                     
-                                </span>
+                                </div>
                             </div>
                         </div>
                     </div>
