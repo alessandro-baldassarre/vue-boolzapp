@@ -87,11 +87,11 @@
 
                 </div>
 
-                <div id="chat" class="col-8">
+                <div v-if="(Object.keys(currentChat).length !== 0)" id="chat" class="col-8">
 
                     <div id="user-chat" class="d-flex align-items-center px-3" :class="(Object.keys(currentChat).length === 0) ? 'justify-content-end' : 'justify-content-between'">
                        
-                        <div v-if="(Object.keys(currentChat).length !== 0)" class="user-chat-info d-flex align-items-center">
+                        <div  class="user-chat-info d-flex align-items-center">
                             
                             <div class="user-avatar">
                                 <img class="rounded-circle " :src="'img/' + currentChat.avatar" alt="user avatar">
@@ -134,6 +134,16 @@
                     </div>
 
                     
+                </div>
+                <div v-else class="col-8 d-flex flex-column px-5 justify-content-center align-items-center" id="pre-chat">
+                    <img src="img/whatsApp-web.png" alt="whatsApp-web image">
+                    <p class="text-light fs-1">WhatsApp Web</p>
+                    <span class="px-3 text-center border-bottom border-secondary">
+                        <p class="text-secondary">
+                            Ora puoi inviare e ricevere messaggi senza che il telefono sia connesso a internet. <br>
+                            Usa WhatsApp su un massimo di 4 dispositivi e 1 telefono contemporaneamente.
+                        </p>
+                    </span>
                 </div>
             </div>
 

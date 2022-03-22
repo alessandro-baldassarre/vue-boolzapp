@@ -205,5 +205,22 @@ div#chat div#new-message div.icon-right{
     width: 10%;
 }
 
+/* PRECHAT */
+
+div#pre-chat{
+    margin:10px 0;
+    padding: 0;
+    overflow: hidden;
+    border-left: 1px solid #2A3942;
+    background-color: #212E35;
+}
+
+div#pre-chat img{
+    width: 50%;
+}
+
+div#pre-chat p{
+    font-size: .8rem;
+}
 
 
