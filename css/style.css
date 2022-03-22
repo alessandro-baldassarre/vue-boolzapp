@@ -1,10 +1,10 @@
 body {
-    background-color: rgb(10, 16, 20);
+    background-color: black;
     
 }
 
 main {
-    max-width: 100%;
+    max-width: 1500px;
     max-height: 100vh;
     overflow: hidden;
     min-width: 940px;
@@ -100,6 +100,7 @@ div#explorer-chats div#search-bar span.my-search-bar input{
 
 div#explorer-chats div#search-bar span.my-search-bar input:focus{
     color: white;
+    box-shadow: none;
 }
 
 /* messages */
@@ -202,6 +203,7 @@ div#chat div#new-message div.new-message-input input{
 
 div#chat div#new-message div.new-message-input input:focus{
     color: white;
+    box-shadow: none;
 }
 
 div#chat div#new-message div.icon-right{

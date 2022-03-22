@@ -16,6 +16,8 @@ const app = new Vue({
 
         newMessage: "",
 
+        searchContact: "",
+
         
         contacts: [
             {
