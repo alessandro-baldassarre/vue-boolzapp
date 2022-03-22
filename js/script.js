@@ -14,6 +14,8 @@ const app = new Vue({
 
         ],
 
+        newMessage: "",
+
         
         contacts: [
             {
@@ -186,10 +188,18 @@ const app = new Vue({
             this.currentChat = activeElement;
             this.currentChat.index = index;
             console.log(this.currentChat);
-            },
+        },
         
         copyContacts: function(){
             this.contactsCopy = this.contacts;
+        },
+
+        addNewMessage(text){
+            tempObj = {}
+            tempObj.date = '10/01/2020 15:51:00';
+            tempObj.message  = text;
+            tempObj.status = 'sent';
+            this.contactsCopy[this.currentChat.index].messages.push(tempObj);
         }
     },
 

@@ -126,7 +126,7 @@
                             <i class="fa-regular fa-face-smile text-secondary fs-4"></i>
                         </div>
                         <div class="new-message-input">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Type a message" aria-label="Search">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Type a message" aria-label="Search" v-model="newMessage" @keyup.enter="addNewMessage(newMessage)">
                         </div>
                         <div class="icon-right text-center">
                             <i class="fa-solid fa-microphone text-secondary fs-4"></i>
