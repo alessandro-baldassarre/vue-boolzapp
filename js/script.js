@@ -226,8 +226,6 @@ const app = new Vue({
             else{
                 this.currentChat.messages[index].clickedMessage = !this.currentChat.messages[index].clickedMessage;
             }
-            
-            console.log(this.currentChat.messages[index].clickedMessage);
             this.$forceUpdate();
         }
 

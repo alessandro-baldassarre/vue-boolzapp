@@ -176,6 +176,7 @@ div#chat div#messages-chat{
 div#chat div#messages-chat div.user-chat-single-text{
     font-size: .7rem; 
     border-radius: 10px;  
+    cursor: pointer;
 }
 
 div#chat div#messages-chat div.user-chat-single-text span{
@@ -183,10 +184,17 @@ div#chat div#messages-chat div.user-chat-single-text span{
 }
 
 div#chat div#messages-chat div#message-options{
-    top: 20px;
+    top: 29px;
     right: -8px;
-    width: 100px;
-    height: 70px;
+    width: 130px;
+    height: 80px;
+    z-index: 2;
+    border-radius: 12px;
+}
+
+div#chat div#messages-chat div#message-options p{
+    cursor: pointer;
+    font-size: .9rem;
 }
 
 div#chat div#new-message{

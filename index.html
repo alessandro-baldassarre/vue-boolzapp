@@ -116,10 +116,11 @@
                                     
                                        <p class="me-5 m-0 ms-3"> {{message.message}} </p>
                                        <span class="ms-5 text-end me-2 position-relative">
-                                            <i class="fa-solid fa-chevron-down text-light mb-2 mt-2" :class="(currentChat.messages[indexMess].clickedMessage) ? 'visible': 'invisible'"></i>
+                                            <i class="fa-solid fa-chevron-down text-light mb-0 mt-3" :class="(currentChat.messages[indexMess].clickedMessage) ? 'visible': 'invisible'"></i>
                                             <p class="m-0 mb-1">21.55</p>
-                                            <div id="message-options" class="position-absolute bg-light" :class="(currentChat.messages[indexMess].clickedMessage)  ? 'visible': 'invisible'">
-                                                ciao
+                                            <div id="message-options" class="position-absolute bg-light text-dark text-start d-flex flex-column justify-content-center align-items-center" :class="(currentChat.messages[indexMess].clickedMessage)  ? 'visible': 'invisible'">
+                                                <p class="m-0 mb-2">Message info</p>
+                                                <p class="m-0">Delete Message</p>
                                             </div>
                                        </span>
                                        
