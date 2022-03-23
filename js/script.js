@@ -194,11 +194,21 @@ const app = new Vue({
         
         copyContacts: function(){
             this.contactsCopy = this.contacts;
+            
+        },
+
+        transformDate:function(date){
+            let newDate;
+            newDate = dayjs(date).get('h') + ":" + dayjs(date).get('m');
+            if(newDate == 'NaN:NaN'){
+                newDate = date.charAt(11) + date.charAt(12) + date.charAt(13) + date.charAt(14) + date.charAt(15);
+            }
+            return newDate;
         },
 
         addNewMessage: function(text){
             tempObj = {}
-            tempObj.date = '10/01/2020 15:51:00';
+            tempObj.date = dayjs();
             tempObj.message  = text;
             tempObj.status = 'sent';
             tempObj.clickedMessage = false;
@@ -209,7 +219,7 @@ const app = new Vue({
 
         responseMessage: function(){
             messageResponse = {}
-            messageResponse.date = '10/01/2020 15:51:00';
+            messageResponse.date = dayjs();
             messageResponse.message  = 'ok';
             messageResponse.status = 'received';
             messageResponse.clickedMessage = false;

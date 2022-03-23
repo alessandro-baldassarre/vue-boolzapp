@@ -83,11 +83,14 @@
                             <div class="single-message-content d-flex ms-3 justify-content-between align-items-start">
                                 <div class="single-message-content-text">
                                     <h6 class="text-white mb-0 my-text-medium">{{contact.name}}</h6>
-                                    <p v-if="((contact.messages.length - 1) >= 0)" class="text-secondary mb-2 my-text-small">{{contact.messages[(contact.messages.length) - 1].message}}</p>
+                                    <p v-if="((contact.messages.length - 1) >= 0)"
+                                        class="text-secondary mb-2 my-text-small">
+                                        {{contact.messages[(contact.messages.length) - 1].message}}</p>
                                 </div>
-                                <div v-if="((contact.messages.length - 1) >= 0)" class="single-message-content-date text-center">
+                                <div v-if="((contact.messages.length - 1) >= 0)"
+                                    class="single-message-content-date text-center">
                                     <i class="fa-solid fa-chevron-down text-secondary mb-1 my-text-extra-small"></i>
-                                    <p class="text-secondary mb-0 my-text-extra-small">21.55</p>
+                                    <p class="text-secondary mb-0 my-text-extra-small">{{transformDate(contact.messages[(contact.messages.length) - 1].date)}}</p>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +100,8 @@
 
                 </div>
 
-                <div v-if="(Object.keys(currentChat).length !== 0) && (Object.keys(contactsCopy[currentChat.index].messages).length !== 0)" id="chat" class="col-8">
+                <div v-if="(Object.keys(currentChat).length !== 0) && (Object.keys(contactsCopy[currentChat.index].messages).length !== 0)"
+                    id="chat" class="col-8">
 
                     <div id="user-chat" class="d-flex align-items-center px-3"
                         :class="(Object.keys(currentChat).length === 0) ? 'justify-content-end' : 'justify-content-between'">
@@ -126,14 +130,13 @@
                                 v-for="(message, indexMess) in currentChat.messages"
                                 :class="(message.status == 'sent') ? 'justify-content-end pe-3 ':'justify-content-start ps-3'">
                                 <div class="text-secondary user-chat-single-text d-flex align-items-center"
-                                    :class="(message.status == 'sent') ? 'bg-success text-white':'my-bg-dark text-light'"
-                                    >
+                                    :class="(message.status == 'sent') ? 'bg-success text-white':'my-bg-dark text-light'">
 
                                     <p class="pe-4 m-0 ms-3" @click="clickMessage(indexMess)"> {{message.message}} </p>
                                     <span class="ms-0 text-end me-2 position-relative">
                                         <i class="fa-solid fa-chevron-down text-light mb-0 mt-3"
                                             :class="(currentChat.messages[indexMess].clickedMessage) ? 'visible': 'invisible'"></i>
-                                        <p class="m-0 mb-1">21.55</p>
+                                        <p class="m-0 mb-1">{{transformDate(message.date)}}</p>
                                         <div id="message-options"
                                             class="position-absolute bg-light text-dark text-start d-flex flex-column justify-content-center align-items-center"
                                             :class="(currentChat.messages[indexMess].clickedMessage)  ? 'visible': 'invisible'">
@@ -181,6 +184,12 @@
 
     </main>
 
+    <!-- Day.js library cdn -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/utc.js"></script>
+    <script>
+        dayjs.extend(window.dayjs_plugin_utc)
+    </script>
     <script src="js/script.js"></script>
 </body>
 
