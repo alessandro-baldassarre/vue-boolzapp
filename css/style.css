@@ -34,6 +34,18 @@ div.contact-avatar img{
     background-color: #2A3942;
 }
 
+.my-text-medium{
+    font-size: .9rem;
+}
+
+.my-text-small{
+    font-size: .8rem;
+}
+
+.my-text-extra-small{
+    font-size: .6rem;
+}
+
 /* EXPLORER CHATS */
 div#explorer-chats{
     margin:10px 0;
@@ -123,7 +135,7 @@ div#explorer-chats div#messages div.single-message.active{
 }
 
 div#explorer-chats div#messages div.single-message.active div.single-message-content i{
-    display: inline-block;
+    visibility: visible;
 }
 
 div#explorer-chats div#messages div.single-message div.single-message-content{
@@ -131,20 +143,12 @@ div#explorer-chats div#messages div.single-message div.single-message-content{
     border-bottom: 1px solid #374044;
 }
 
-div#explorer-chats div#messages div.single-message div.single-message-content h6{
-    font-size: .8rem;
-}
-
-div#explorer-chats div#messages div.single-message div.single-message-content p{
-    font-size: .6rem;
-}
-
 div#explorer-chats div#messages div.single-message div.single-message-content i{
-    display: none;
+    visibility: hidden;
 }
 
 div#explorer-chats div#messages div.single-message:hover div.single-message-content i{
-    display: inline-block;
+    visibility: visible;
 }
 
 

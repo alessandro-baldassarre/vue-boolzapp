@@ -77,17 +77,17 @@
                             v-if="(contact.name.toLowerCase().startsWith(searchContact.toLowerCase()))"
                             class="single-message d-flex px-3 pt-3" @click="activeChat(contact, index)"
                             :class="(contact == currentChat) ? 'active' : ''">
-                            <div class="contact-avatar">
+                            <div class="contact-avatar" :class="((contact.messages.length - 1) >= 0) ? '' :'mb-2'">
                                 <img class="rounded-circle " :src="'img/' + contact.avatar" alt="user avatar">
                             </div>
                             <div class="single-message-content d-flex ms-3 justify-content-between align-items-start">
                                 <div class="single-message-content-text">
-                                    <h6 class="text-white mb-0">{{contact.name}}</h6>
-                                    <p class="text-secondary mb-3">{{contact.messages[(contact.messages.length) - 1].message}}</p>
+                                    <h6 class="text-white mb-0 my-text-medium">{{contact.name}}</h6>
+                                    <p v-if="((contact.messages.length - 1) >= 0)" class="text-secondary mb-2 my-text-small">{{contact.messages[(contact.messages.length) - 1].message}}</p>
                                 </div>
-                                <div class="single-message-content-date text-center">
-                                    <p class="text-secondary mb-0">21.55</p>
-                                    <i class="fa-solid fa-chevron-down text-secondary"></i>
+                                <div v-if="((contact.messages.length - 1) >= 0)" class="single-message-content-date text-center">
+                                    <i class="fa-solid fa-chevron-down text-secondary mb-1 my-text-extra-small"></i>
+                                    <p class="text-secondary mb-0 my-text-extra-small">21.55</p>
                                 </div>
                             </div>
                         </div>
