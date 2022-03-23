@@ -217,16 +217,26 @@ const app = new Vue({
         },
 
         clickMessage: function(index){
-            if(!this.currentChat.messages[index].clickedMessage){
+            if(index < this.currentChat.messages.length){
+                if(!this.currentChat.messages[index].clickedMessage){
 
-                this.currentChat.messages.filter(element =>{
-                    return element.clickedMessage = false;});
-                this.currentChat.messages[index].clickedMessage = !this.currentChat.messages[index].clickedMessage;
+                    this.currentChat.messages.filter(element =>{
+                        return element.clickedMessage = false;});
+                    this.currentChat.messages[index].clickedMessage = !this.currentChat.messages[index].clickedMessage;
+                }
+                else{
+                    this.currentChat.messages[index].clickedMessage = !this.currentChat.messages[index].clickedMessage;
+                }
+                this.$forceUpdate();
             }
-            else{
-                this.currentChat.messages[index].clickedMessage = !this.currentChat.messages[index].clickedMessage;
+            
+        },
+
+        deleteMessage: function(messIndex){
+            if(messIndex < this.currentChat.messages.length){
+                this.contactsCopy[this.currentChat.index].messages.splice(messIndex, 1);
             }
-            this.$forceUpdate();
+            
         }
 
     },

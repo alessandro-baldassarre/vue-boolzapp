@@ -175,10 +175,11 @@ div#chat div#messages-chat{
 }
 
 div#chat div#messages-chat div.user-chat-single-text{
-    font-size: .7rem; 
+    font-size: .9rem; 
     border-radius: 10px;  
     cursor: pointer;
 }
+
 
 div#chat div#messages-chat div.user-chat-single-text span{
     font-size: .5rem;
