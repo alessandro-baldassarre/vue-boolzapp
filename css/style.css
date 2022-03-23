@@ -166,10 +166,6 @@ div#chat div#user-chat{
     background-color: #1F2C33;
 }
 
-div#chat div#user-chat p{
-    font-size: .7rem;
-}
-
 div#chat div#messages-chat{
     height: calc(100vh - 160px);
     overflow-y: auto;
@@ -179,14 +175,8 @@ div#chat div#messages-chat{
 }
 
 div#chat div#messages-chat div.user-chat-single-text{
-    font-size: .9rem; 
     border-radius: 10px;  
     cursor: pointer;
-}
-
-
-div#chat div#messages-chat div.user-chat-single-text span{
-    font-size: .5rem;
 }
 
 div#chat div#messages-chat div#message-options{
@@ -200,7 +190,6 @@ div#chat div#messages-chat div#message-options{
 
 div#chat div#messages-chat div#message-options p{
     cursor: pointer;
-    font-size: .9rem;
 }
 
 div#chat div#new-message{
@@ -244,9 +233,4 @@ div#pre-chat{
 div#pre-chat img{
     width: 50%;
 }
-
-div#pre-chat p{
-    font-size: .8rem;
-}
-
 

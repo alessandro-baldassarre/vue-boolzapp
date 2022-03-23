@@ -26,14 +26,16 @@
 </head>
 
 <body>
-
+    <!-- main with connection to vue -->
     <main id="app" class="px-5">
 
         <div class="container-fluid px-5">
 
             <div class="row">
+                <!-- explorer chats left column -->
                 <div id="explorer-chats" class="col-4">
 
+                    <!-- user bar -->
                     <div id="user-bar" class="d-flex justify-content-between align-items-center px-3">
 
                         <div class="user-avatar">
@@ -47,6 +49,8 @@
                         </div>
 
                     </div>
+
+                    <!-- notifications config -->
                     <div id="notifications-config" class="d-flex align-items-center px-3">
 
                         <span
@@ -62,15 +66,19 @@
                         </div>
 
                     </div>
+
+                    <!-- search-bar -->
                     <div id="search-bar" class="d-flex align-items-center px-3">
 
                         <span class="my-search-bar d-flex align-items-center px-3"><a
                                 class="text-decoration-none text-secondary" href=""><i
-                                    class="fa-solid fa-magnifying-glass"></i></a><input v-model="searchContact"
+                                    class="fa-solid fa-magnifying-glass"></i></a><input
                                 class="form-control mr-sm-2 ms-2" type="search" placeholder="Search or start new chat"
-                                aria-label="Search"></span>
+                                aria-label="Search" v-model="searchContact"></span>
 
                     </div>
+
+                    <!-- contacts messages -->
                     <div id="messages">
 
                         <div v-for="(contact, index) in contactsCopy"
@@ -82,7 +90,7 @@
                             </div>
                             <div class="single-message-content d-flex ms-3 justify-content-between align-items-start">
                                 <div class="single-message-content-text">
-                                    <h6 class="text-white mb-0 my-text-medium">{{contact.name}}</h6>
+                                    <h6 class="text-white mb-0 my-text-medium mb-1">{{contact.name}}</h6>
                                     <p v-if="((contact.messages.length - 1) >= 0)"
                                         class="text-secondary mb-2 my-text-small">
                                         {{contact.messages[(contact.messages.length) - 1].message}}</p>
@@ -100,20 +108,23 @@
 
                 </div>
 
+                <!-- if there is an active chat, right column -->
                 <div v-if="(Object.keys(currentChat).length !== 0) && (Object.keys(contactsCopy[currentChat.index].messages).length !== 0)"
                     id="chat" class="col-8">
 
+                    <!-- user-chat -->
                     <div id="user-chat" class="d-flex align-items-center px-3"
                         :class="(Object.keys(currentChat).length === 0) ? 'justify-content-end' : 'justify-content-between'">
 
+                        <!-- user-chat-info -->
                         <div class="user-chat-info d-flex align-items-center">
 
                             <div class="user-avatar">
                                 <img class="rounded-circle " :src="'img/' + currentChat.avatar" alt="user avatar">
                             </div>
                             <div class="user-chat-name ms-3">
-                                <h6 class="text-white mb-0">{{currentChat.name}}</h6>
-                                <p class="text-secondary mb-0">Last message sent</p>
+                                <h6 class="text-white mb-1">{{currentChat.name}}</h6>
+                                <p class="text-secondary mb-0 my-text-small">Tap here for contact info</p>
                             </div>
 
                         </div>
@@ -124,6 +135,8 @@
                         </div>
 
                     </div>
+
+                    <!-- messages-chat active -->
                     <div id="messages-chat" class="px-5 pt-4">
                         <div class="user-chat-messages">
                             <div class="user-chat-single-message mt-3 d-flex"
@@ -133,15 +146,15 @@
                                     :class="(message.status == 'sent') ? 'bg-success text-white':'my-bg-dark text-light'">
 
                                     <p class="pe-4 m-0 ms-3" @click="clickMessage(indexMess)"> {{message.message}} </p>
-                                    <span class="ms-0 text-end me-2 position-relative">
+                                    <span class="ms-0 text-end me-2 position-relative my-text-extra-small">
                                         <i class="fa-solid fa-chevron-down text-light mb-0 mt-3"
                                             :class="(currentChat.messages[indexMess].clickedMessage) ? 'visible': 'invisible'"></i>
                                         <p class="m-0 mb-1">{{transformDate(message.date)}}</p>
                                         <div id="message-options"
                                             class="position-absolute bg-light text-dark text-start d-flex flex-column justify-content-center align-items-center"
                                             :class="(currentChat.messages[indexMess].clickedMessage)  ? 'visible': 'invisible'">
-                                            <p class="m-0 mb-2">Message info</p>
-                                            <p class="m-0" @click="deleteMessage(indexMess)">Delete Message</p>
+                                            <p class="m-0 mb-2 my-text-medium">Message info</p>
+                                            <p class="m-0 my-text-medium" @click="deleteMessage(indexMess)">Delete Message</p>
                                         </div>
                                     </span>
 
@@ -150,6 +163,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- new-message -->
                     <div id="new-message" class="d-flex align-items-center">
                         <div class="icon-left text-center">
                             <i class="fa-regular fa-face-smile text-secondary fs-4"></i>
@@ -162,15 +177,15 @@
                             <i class="fa-solid fa-microphone text-secondary fs-4"></i>
                         </div>
                     </div>
-
-
                 </div>
+
+                <!-- if there is not an active chat (default), right column -->
                 <div v-else class="col-8 d-flex flex-column px-5 justify-content-center align-items-center"
                     id="pre-chat">
                     <img src="img/whatsApp-web.png" alt="whatsApp-web image">
                     <p class="text-light fs-1">WhatsApp Web</p>
                     <span class="px-3 text-center border-bottom border-secondary">
-                        <p class="text-secondary">
+                        <p class="text-secondary my-text-small">
                             Ora puoi inviare e ricevere messaggi senza che il telefono sia connesso a internet. <br>
                             Usa WhatsApp su un massimo di 4 dispositivi e 1 telefono contemporaneamente.
                         </p>
