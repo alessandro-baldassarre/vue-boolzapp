@@ -109,7 +109,7 @@
                 </div>
 
                 <!-- if there is an active chat, right column -->
-                <div v-if="(Object.keys(currentChat).length !== 0) && (Object.keys(contactsCopy[currentChat.index].messages).length !== 0)"
+                <div v-if="(Object.keys(currentChat).length !== 0)"
                     id="chat" class="col-8">
 
                     <!-- user-chat -->
@@ -137,7 +137,7 @@
                     </div>
 
                     <!-- messages-chat active -->
-                    <div id="messages-chat" class="px-5 pt-4">
+                    <div v-if="(Object.keys(contactsCopy[currentChat.index].messages).length !== 0)" id="messages-chat" class="px-5 pt-4">
                         <div class="user-chat-messages">
                             <div class="user-chat-single-message mt-3 d-flex"
                                 v-for="(message, indexMess) in currentChat.messages"
@@ -162,6 +162,9 @@
 
                             </div>
                         </div>
+                    </div>
+                    <div v-else id="messages-chat" class="px-5 pt-4">
+                        
                     </div>
 
                     <!-- new-message -->
