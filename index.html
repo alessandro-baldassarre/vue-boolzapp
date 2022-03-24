@@ -82,7 +82,7 @@
                     <div id="messages">
 
                         <div v-for="(contact, index) in contactsCopy"
-                            v-if="(contact.name.toLowerCase().startsWith(searchContact.toLowerCase()))"
+                            v-if="(contact.name.toLowerCase().startsWith(searchContact.toLowerCase().trim()))"
                             class="single-message d-flex px-3 pt-3" @click="activeChat(contact, index)"
                             :class="(contact == currentChat) ? 'active' : ''">
                             <div class="contact-avatar" :class="((contact.messages.length - 1) >= 0) ? '' :'mb-2'">
